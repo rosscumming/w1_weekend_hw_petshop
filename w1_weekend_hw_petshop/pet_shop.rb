@@ -77,6 +77,10 @@ def sell_pet_to_customer(pet_shop, pet, customer)
     return nil
   end
 
+  if customer[:cash] < pet[:price]
+    return nil
+  end
+
   customer[:cash] >= pet[:price]
   customer[:cash] -= pet[:price]
 
