@@ -71,17 +71,17 @@ def customer_can_afford_pet(customer, new_pet)
     return false
 end
 
-def sell_pet_to_customer(store, whole_pet, customer)
+def sell_pet_to_customer(store, pet_name, customer)
 
-    customer[:cash] >= whole_pet[:price]
-    customer[:cash] -= whole_pet[:price]
+    customer[:cash] >= pet_name[:price]
+    customer[:cash] -= pet_name[:price]
 
-    store[:pets].delete(whole_pet)
+    store[:pets].delete(pet_name)
 
-    store[:admin][:total_cash] += whole_pet[:price]
+    store[:admin][:total_cash] += pet_name[:price]
     store[:admin][:pets_sold] += 1
 
     customer[:pets].push(1)
-  
+
 
 end
